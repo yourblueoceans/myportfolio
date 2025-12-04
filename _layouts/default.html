@@ -16,6 +16,14 @@
 
       {%- include about.html -%}
 
+      {% if site.content %}
+        <nav class="section-nav" aria-label="섹션 바로가기">
+          {% for section in site.content %}
+            <a href="#{{ section.title | slugify }}">{{ section.title }}</a>
+          {% endfor %}
+        </nav>
+      {% endif %}
+
       {%- if site.version == 2 -%}
         {% for section in site.content %}
           <div class="container {{ section.layout }}-container">
@@ -33,6 +41,40 @@
   {% if site.darkmode == false %}
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
   {% endif %}
+  <script>
+    (function () {
+      const links = document.querySelectorAll('.section-nav a');
+      if (!('IntersectionObserver' in window) || !links.length) return;
+
+      const map = {};
+      links.forEach((link) => {
+        const id = link.getAttribute('href').replace('#', '');
+        map[id] = link;
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute('id');
+              links.forEach((l) => l.classList.remove('is-active'));
+              if (map[id]) {
+                map[id].classList.add('is-active');
+              }
+            }
+          });
+        },
+        { threshold: 0.45 }
+      );
+
+      Object.keys(map).forEach((id) => {
+        const section = document.getElementById(id);
+        if (section) {
+          observer.observe(section);
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>

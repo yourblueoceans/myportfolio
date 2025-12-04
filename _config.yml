@@ -1,119 +1,179 @@
-# Site
-repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
-# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
+repository: yourblueoceans/myportfolio
 
-# Content configuration version
 version: 2
+lang: ko
+social_image: /screenshot.png
 
-# Personal info
-name: SANGWON SUH
-title: Security Consultant
+name: 서상원 (Sangwon Suh)
+title: 정보보안 컨설턴트 · 기술 영업 리드
+description: 중견·중소기업을 위한 정보보안 컨설팅, 기술 영업, 클라우드 자동화를 연결합니다.
 email: yourblueoceans@gmail.com
-# email_title: Email (Email title override)
-phone: 010-9465-0226 (optional)
-# phone_title: Phone (Phone title override)
-website: Your website (eg. https://google.com)(optional)
-# website_title: Web (Website title override)
+phone: 010-9465-0226
+website: https://yourblueoceans.github.io
+location: Seoul, Republic of Korea
 
-# Dark Mode (true/false/never)
-darkmode: false
+darkmode: true
 
-# Social links
-twitter_username: jekyllrb
-github_username:  jekyll
-stackoverflow_username: "00000001"
-dribbble_username: jekyll
-facebook_username: jekyll
-flickr_username: jekyll
-instagram_username: jekyll
-linkedin_username: jekyll
-xing_username: jekyll
-pinterest_username: jekyll
-youtube_username: jekyll
-orcid_username: 0000-0000-0000-0000
-googlescholar_username: D847cGsAAAAJ
+twitter_username:
+github_username: yourblueoceans
+instagram_username:
+linkedin_username: sangwonsuh
 
-# Additional icon links
 additional_links:
-- title: Link name
-  icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-  url: Link url (eg. https://google.com)
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-#   url: Link url (eg. https://google.com)
+  - title: Velog · Security Playbook
+    icon: fab fa-blogger-b
+    url: https://velog.io/@yourblueoceans
+  - title: GitHub · Lab Repos
+    icon: fab fa-github
+    url: https://github.com/yourblueoceans
+  - title: LinkedIn Newsletter
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/sangwonsuh
+  - title: Notion Portfolio Deck (KR)
+    icon: fas fa-file-pdf
+    url: https://notion.so/yourblueoceans/security-deck
 
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
+gtag:
 
-# About Section
-# about_title: About Me (Use this to override about section title)
-about_profile_image: Directory of profile image (eg. images/profile.jpg)
-about_content: | # this will include new lines to allow paragraphs
-  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
-
-  You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
-    - Lists
-    - Tables
-    - <a href="google.com">Links</a>
-    - Images ![alt text](/images/landscape-trees.jpg "Trees")
+about_profile_image: images/landscape-trees.jpg
+about_title: 소개
+about_content: |
+  <p class="hero-kicker">CONSULTING · TECH SALES · CLOUD SECURITY</p>
+  <h2>중견 · 중소기업 정보보안 체계를 컨설팅부터 기술영업, 클라우드 자동화까지 설계하는 프랙티셔너입니다.</h2>
+  <p>규제 대응, 영업 전략, 운영 자동화의 언어를 모두 아는 하이브리드 인재로서 고객의 보안 투자 여정을 KPI 중심으로 설계합니다. 컨설팅 34건, 기술 제안 성공률 58%, 클라우드 보안 PoC 6건을 통해 체계화된 방법론과 마케팅 메시지를 동시에 다듬었습니다.</p>
+  <div class="metric-grid">
+    <div class="metric-card">
+      <div class="metric-card__value">34건</div>
+      <div class="metric-card__label">최근 3년 보안 컨설팅</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card__value">70%↓</div>
+      <div class="metric-card__label">예비 심사 지적 선제 제거</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card__value">58%</div>
+      <div class="metric-card__label">기술 제안 성공률</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-card__value">40%↓</div>
+      <div class="metric-card__label">클라우드 보안 SLA 단축</div>
+    </div>
+  </div>
 
 content:
-  - title: Projects # Title for the section
-    layout: list # Type of content section (list/text)
+  - title: 핵심 가치 제안
+    layout: text
+    content: |
+      <ul class="case-list">
+        <li class="case-card">
+          <div class="case-card__title">Risk → Revenue 스토리텔링</div>
+          <div class="case-card__meta">보안 투자 명분을 KPI와 연결</div>
+          <p>규제 리스크, 운영 리스크, 세일즈 리스크까지 하나의 내러티브로 엮어 임원과 실무자가 모두 공감할 수 있는 제안서를 설계합니다.</p>
+        </li>
+        <li class="case-card">
+          <div class="case-card__title">데이터 기반 컨설팅 방법론</div>
+          <div class="case-card__meta">ISMS-P / ISO 27001 / OT 보안</div>
+          <p>표준 통제 항목을 고객 산업 맞춤 KPI로 리프레이밍하여 <strong>‘지적 제거 리스트’</strong>와 <strong>‘운영 대시보드’</strong>를 동시에 제공합니다.</p>
+        </li>
+        <li class="case-card">
+          <div class="case-card__title">클라우드 · 자동화 실행력</div>
+          <div class="case-card__meta">IaC, Detection Engineering, SecOps</div>
+          <p>Terraform + OPA, Sentinel, Wiz 등의 도구를 활용해 컨설팅 deliverable이 실제 운영 환경에 자리 잡을 때까지 책임집니다.</p>
+        </li>
+      </ul>
+
+  - title: 컨설팅 케이스 스터디
+    layout: list
     content:
       - layout: left
-        border: weak  # Value of `weak` will display a weak border below this item. # Any 
-                      # other value (or no value) means no border will be displayed
-        title: Project name
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        link_text: Link Text
-        additional_links:
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+        title: 스마트팩토리 OT 보안 거버넌스 고도화
+        sub_title: 리드 컨설턴트 · 제조 중견기업
+        caption: 2024
         quote: >
-          Short overview of the project (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description about the work on/with the project
-  - title: Experience
-    layout: list
-    content:
-      - layout: right
-        title: Company name
-        sub_title: Job title
-        caption: Date Range (eg. November 2016 - present)
-        link: Link to company (optional)
+          ICS 자산 가시성 + 네트워크 존 세분화 + 현장 대응 Runbook
+        description: |
+          - 120개 설비 기반 OT 위험도 분석, SCADA 구간 단위 세분화 정책 설계
+          - 현장 엔지니어가 바로 사용할 수 있는 대응 카드 & 교육 모듈 제작
+          - OT 사고 대응 시간 35% 단축, 연간 다운타임 비용 18% 절감 예상
+      - layout: left
+        title: 핀테크 ISMS-P 재심사 동행
+        sub_title: PM / 보안 컨설턴트
+        caption: 2023
         quote: >
-          Short description of the company (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description of role
-  - title: Education
-    layout: list
-    content:
-      - layout: top-right
-        title: Institution name
-        sub_title: Qualifications (eg. BA Performing Arts)
-        caption: Date Range (eg. 2016 - 2019)
+          24개 통제 항목 재설계, 로그 가시성 시나리오 패키지화
+        description: |
+          - 전사 데이터 흐름 맵과 개인정보 보호 정책을 API 기준으로 재작성
+          - 예비 점검 지적 17건 → 본심사 지적 0건, 감사 대응 문서화 72시간 단축
+      - layout: left
+        title: 클라우드 MDR 서비스 기획
+        sub_title: 보안 컨설턴트 & 기술영업
+        caption: 2022
         quote: >
-          Short institution or course description (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description of qualification
-  - title: A Little More About Me
+          Azure/AWS 계정 보안 패키징으로 신규 매출 8억 원
+        description: |
+          - 고객군별 L1/L2 대응 KPI를 미리 정의하고 위협 탐지 시간 15분 → 6분 축소
+          - SecOps FAQ + ROI 계산기 제공으로 영업 사이클 3주 단축
+
+  - title: 기술 영업 & 프리세일즈
     layout: text
-    content: | # this will include new lines to allow paragraphs
-      This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+    content: |
+      - 산업별 RFP 응답 템플릿 12종을 운영해 제안 작성 시간을 30% 절감했습니다.
+      - “보안 건강검진 워크숍”을 리드 마그넷으로 운영하여 리드 → 계약 전환율을 23%p 끌어올렸습니다.
+      - 계약 이후에도 초기 온보딩 세션과 CISO용 보고서 킷을 제공해 업셀 기회를 만들었습니다.
 
-      Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+  - title: Cloud & Automation Labs
+    layout: text
+    content: |
+      <div class="lab-grid">
+        <div class="lab-card">
+          <h4>Zero Trust Reference Lab</h4>
+          <p>Azure AD / Entra / Defender for Cloud를 연동해 정책-감사-자동화 파이프라인을 테스트.</p>
+        </div>
+        <div class="lab-card">
+          <h4>Multi-Cloud Posture Script</h4>
+          <p>Terraform + OPA로 CIS Benchmark 검증을 코드화하고 GitHub Actions로 지속 점검.</p>
+        </div>
+        <div class="lab-card">
+          <h4>Threat Simulation Suite</h4>
+          <p>Atomic Red Team + Kusto Query를 활용한 탐지 룰 튜닝, SLA 40% 단축.</p>
+        </div>
+      </div>
 
-# Footer
-footer_show_references: true
-# references_title: References on request (Override references text)
+  - title: Credentials & Toolchain
+    layout: list
+    content:
+      - layout: top-middle
+        title: 주요 자격 & 교육
+        description: |
+          - CISSP (2023)
+          - ISO/IEC 27001 Lead Auditor
+          - AWS Certified Security – Specialty
+          - KISA KC 전문가 과정 13기
+      - layout: top-middle
+        title: 도구 & 방법론
+        description: |
+          - Wiz, Prisma Cloud, Tenable, Qualys
+          - Microsoft Sentinel, Splunk, Elastic
+          - Terraform, Python, Power BI, GitHub Actions
+          - MITRE ATT&CK, NIST CSF, CIS Benchmarks
+
+  - title: Thought Leadership
+    layout: text
+    content: |
+      - Velog ‘Security Playbook’ 24편, 평균 조회 1.3k
+      - LinkedIn 뉴스레터 <em>Security Go-To-Market Weekly</em> 구독자 620명
+      - BoB 커뮤니티 / 대학 보안 동아리 강연 8회
+
+  - title: 상담 & CTA
+    layout: text
+    content: |
+      <div class="cta-stack">
+        <a class="cta-button" href="mailto:yourblueoceans@gmail.com?subject=보안 컨설팅 미팅 요청">30분 무료 진단 미팅</a>
+        <a class="cta-button" href="https://notion.so/yourblueoceans/security-deck" target="_blank" rel="noopener">PDF 이력서 다운로드</a>
+      </div>
+      <p class="badge badge--ghost">☎︎ 010-9465-0226 · LinkedIn DM 환영</p>
+
+footer_show_references: false
 
 # Build settings
 # theme: modern-resume-theme (Use this is you are hosting your resume yourself)

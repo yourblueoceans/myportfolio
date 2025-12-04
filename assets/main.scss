@@ -2,4 +2,221 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
 @import 'modern-resume-theme';
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-ink: #0b1c2d;
+  --color-ink-muted: #6b768a;
+  --color-bg: #f5f6f9;
+  --color-panel: #ffffff;
+  --color-border: rgba(11, 28, 45, 0.08);
+  --color-accent: #1ecad3;
+  --color-accent-strong: #00a4af;
+  --color-warm: #f2c078;
+  --shadow-soft: 0 14px 40px rgba(5, 19, 37, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #040b14;
+    --color-panel: #0f1d2d;
+    --color-border: rgba(255, 255, 255, 0.08);
+  }
+}
+
+body {
+  font-family: 'Pretendard', 'Spoqa Han Sans Neo', 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Space Grotesk', 'Pretendard', sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+main,
+.container {
+  background: transparent;
+}
+
+.panel,
+section,
+.card {
+  background: var(--color-panel);
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--color-accent-strong);
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.metric-card {
+  background: #081224;
+  color: #f7fbff;
+  border-radius: 18px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.metric-card__value {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.metric-card__label {
+  font-size: 0.9rem;
+  color: rgba(247, 251, 255, 0.8);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(30, 202, 211, 0.08);
+  color: var(--color-ink);
+}
+
+.badge--ghost {
+  background: transparent;
+  border-color: rgba(107, 118, 138, 0.35);
+  color: var(--color-ink-muted);
+}
+
+.case-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.case-card {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.25rem;
+}
+
+.case-card__title {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.case-card__meta {
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  margin-bottom: 0.5rem;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.lab-card {
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(30, 202, 211, 0.08), rgba(11, 28, 45, 0.02));
+}
+
+.cta-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cta-button {
+  background: var(--color-accent);
+  color: #041121;
+  border-radius: 999px;
+  padding: 0.95rem 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 20px 35px rgba(30, 202, 211, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  transform: translateY(-2px);
+  color: #041121;
+}
+
+.section-nav {
+  position: sticky;
+  top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.section-nav a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--color-ink-muted);
+  transition: all 0.2s ease;
+}
+
+.section-nav a:hover,
+.section-nav a:focus,
+.section-nav a.is-active {
+  border-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+@media (max-width: 768px) {
+  .panel,
+  section,
+  .card {
+    padding: 1.75rem;
+  }
+
+  .metric-card__value {
+    font-size: 1.8rem;
+  }
+}

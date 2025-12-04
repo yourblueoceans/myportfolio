@@ -2,12 +2,48 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description | default: site.title }}">
+  <meta name="author" content="{{ site.name }}">
+  <meta name="theme-color" content="#0b1c2d">
+  <meta name="format-detection" content="telephone=no">
 
   <title>{{ site.name }} | {{ site.title }}</title>
   {%- seo title=false -%}
 
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="{{ site.name }} | {{ site.title }}">
+  <meta property="og:description" content="{{ site.description | default: site.title }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ site.social_image | default: '/screenshot.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.name }} | {{ site.title }}">
+  <meta name="twitter:description" content="{{ site.description | default: site.title }}">
+  <meta name="twitter:image" content="{{ site.social_image | default: '/screenshot.png' | absolute_url }}">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.name }}",
+    "jobTitle": "{{ site.title }}",
+    "email": "mailto:{{ site.email }}",
+    "image": "{{ site.about_profile_image | absolute_url }}",
+    "url": "{{ '/' | absolute_url }}",
+    "knowsAbout": ["정보보안", "보안컨설팅", "기술영업", "클라우드 보안"],
+    "sameAs": [
+      "{{ 'https://github.com/' | append: site.github_username }}",
+      "{{ 'https://www.linkedin.com/in/' | append: site.linkedin_username }}",
+      "https://velog.io/@yourblueoceans"
+    ]
+  }
+  </script>
 
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
